@@ -1,9 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"backend/backend/routes"
+	"log"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
-
-	fmt.Println("hello World")
-
+	app := fiber.New()
+	routes.NewHandler()
+	log.Fatal(app.Listen(":3000"))
 }
